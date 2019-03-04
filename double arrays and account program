@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <ctype.h>
+#include <time.h>
+
+int main(){
+    int i, id, found = 0;
+    int cusID[] = {313, 10, 300, 888, 666, 123};
+    int cusBal[] = {90, 834, 109, 299, 99, 32};
+
+    printf("what is your ID number?");
+    scanf(" %d", &id);
+
+    for (i = 0; i < 6; ++i) {
+        if (id == cusID[i])
+        {
+            found = 1;
+            break;
+        }
+    }
+
+    if (found)
+    {
+        if (cusBal[i] > 100)
+        {
+            printf("your balence is way to high");
+        }
+        else
+        {
+            printf("you can buy something");
+        }
+    }
+    else
+    {
+        printf("sorry that ID was incorrect");
+    }
+
+}
