@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <conio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+    int moviesSeen, ratting = 0, favorite = 0, lestFavorite = 10;
+    char movieName[10], fav[10], lest[10];
+
+    printf("how many moives have you seen this year?: ");
+    scanf(" %d", &moviesSeen);
+
+    for (int i = 0; i < moviesSeen; ++i) {
+        printf("What was the movie name?: ");
+        scanf(" %s", movieName);
+
+        printf("How would you rate the movie?: ");
+        scanf(" %d", &ratting);
+
+        if (favorite < ratting)
+        {
+            favorite = ratting;
+            strcpy(fav, movieName);
+        }
+        
+        if (lestFavorite > ratting)
+        {
+            lestFavorite = ratting;
+            strcpy(lest, movieName);
+        }
+    }
+    printf("\n\nYour favorite movie was %s.\n Your least favorite movie was %s", fav, lest);
+}
