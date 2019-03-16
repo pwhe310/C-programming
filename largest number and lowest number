@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <conio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int userInput, greatest = 0, lowest = 100;
+
+    for (int i = 0; i < 3; ++i) {
+        printf("Enter any number you want: ");
+        scanf(" %d", &userInput);
+
+        if (greatest < userInput)
+        {
+            greatest = userInput;
+        }
+
+        if (lowest > userInput)
+        {
+            lowest = userInput;
+        }
+    }
+    printf("the bigest number was %d and the lowest number was %d", greatest,lowest);
+}
