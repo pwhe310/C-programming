@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <conio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+    //e= 25% & d= 15%
+    float cost = 17.5;
+    float * pCost = &cost;
+    int kids;
+    int * pKids = &kids;
+    char code;
+    char * pCode = &code;
+
+    printf("how  many kids are you taking to the water Park?");
+    scanf(" %d", &kids);
+
+    printf("Do you have the [e]mplyoees pass, [s]ave-more pass, or no pass at all");
+    scanf(" %c", &code);
+
+    switch (*pCode)
+    {
+        case 's':
+            printf("you saved 15%% on the whole sales.\nYour price is %.2f", *pKids * *pCost *.85);
+            break;
+        case 'e':
+            printf("you saved 25%% on the whole sales.\nrYour price is %.2f", *pKids * *pCost * .75);
+            break;
+        default:
+            printf("your whole cost is %.2f", *pCost * *pKids);
+            break;
+    }
+    return 0;
