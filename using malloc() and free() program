@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <conio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+    //time_t t;
+    //srand(time(&t));
+    int ans, total = 0, ctr = 0;
+    int * row;
+    printf("How many #'s do you want to input?: ");
+    scanf(" %d", &ans);
+
+    row = (int *) malloc(ans * sizeof(int));
+
+    if (row == NULL)
+    {
+        printf("Not enough space");
+        exit(1);
+    }
+
+    for (int i = 0; i < ans; ++i) {
+        int numInts[ctr];
+
+        printf("What # do you want?: ");
+        scanf(" %d", &numInts[ctr]);
+
+        total += numInts[ctr];
+    }
+    printf("the sum is %d", total);
+    free(row);
+}
