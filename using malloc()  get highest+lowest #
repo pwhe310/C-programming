@@ -1,0 +1,36 @@
+int main()
+{
+    time_t t;
+    srand(time(&t));
+    int * blockNums, nums, max = 0, least = 1000;
+
+    printf("How many # block do you want?");
+    scanf(" %d", &nums);
+
+    int randNums[nums];
+
+    blockNums = (int *) malloc(nums * sizeof(int));
+
+    if (blockNums == NULL)
+    {
+        printf("failed");
+        exit(1);
+    }
+
+    for (int i = 0; i < nums; ++i) {
+        randNums[i] = (rand() %100) + 1;
+
+        if (randNums[i] > max)
+        {
+            max = randNums[i];
+        }
+        else if (randNums[i] < least)
+        {
+            least = randNums[i];
+        }
+    }
+    printf("\nthe hightest number is %d", max);
+    printf("\nthe lowerst is %d", least);
+
+    free(blockNums);
+}
