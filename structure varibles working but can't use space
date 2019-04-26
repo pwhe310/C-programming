@@ -1,0 +1,35 @@
+struct bookInfo
+{
+    char * title[25];
+    char aouthor[15];
+    float price;
+    int pages;
+};
+
+int main() {
+   struct bookInfo * book;
+   int i, nums;
+
+   printf("how many books do you want to input?: ");
+   scanf(" %d", &nums);
+
+   book = (struct bookInfo*) malloc(nums * sizeof(struct bookInfo));
+
+    for (i = 0; i < nums; ++i) {
+        printf("what is the title?: ");
+        scanf(" %s", &(book+i)->title);
+
+        printf("who is the aouther?: ");
+        scanf(" %s", &(book+i)->aouthor);
+
+        printf("what is the price of the book?: ");;
+        scanf(" %f", &(book + i)->price);
+
+        printf("how many pages are there?: ");
+        scanf(" %d", &(book + i)->pages);
+    }
+
+    for (i = 0; i < nums; ++i) {
+        printf("\nthe title was %s by %s. the price was %.2f and had %d pages", (book + i)->title, (book + i)->aouthor, (book + i)->price, (book + 1)->pages);
+    }
+}
