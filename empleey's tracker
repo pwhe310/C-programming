@@ -1,0 +1,46 @@
+struct emplyees               //this program is in another window and in my program this file is called backgroundProgram.c
+{
+    char firstname[25];
+    char lastname[15];
+    int age;
+};
+
+
+#include <stdio.h>      //this is the main program were most of everything is done
+#include <conio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+#include "backgroundProgram.c"
+
+int main()
+{
+    int i, numEmplyees, found = 0;
+    int userID[3] = {313, 87, 134};
+
+    printf("how many emplyees do you have?");
+    scanf(" %d", &numEmplyees);
+
+    struct emplyees * workers[numEmplyees];
+
+    for (i = 0; i < numEmplyees; ++i) {
+        workers[i] = (struct emplyees *) malloc(sizeof(struct emplyees));
+
+        getchar();  //clears new line input
+
+        printf("what is your first name user #%d?: ", (i + 1));
+        gets(workers[i]->firstname);
+
+        printf("what is your last name?: ");
+        gets(workers[i]->lastname);
+
+        printf("what is your age?: ");
+        scanf(" %d", &workers[i]->age);
+    }
+
+    for (i = 0; i < numEmplyees; ++i) {
+        printf("\nyour name is %s %s and your age is %d", workers[i]->firstname,workers[i]->lastname,workers[i]->age);
+    }
+}
