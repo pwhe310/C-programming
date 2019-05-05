@@ -1,0 +1,43 @@
+struct emplyees
+{
+    char firstname[25];
+    char lastname[15];
+    int age;
+};
+
+
+#include <stdio.h>
+#include <conio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+#include "backgroundProgram.c"
+
+FILE * structEmplyees;
+
+int main()
+{
+    int i, numEmplyees;
+
+  char fileLine[100];       //will hold each line of input
+  structEmplyees = fopen("C:\\Users\\philip\\Desktop\\Cprograms\\emplyeeList.txt", "r");
+
+    if (structEmplyees != 0)
+    {
+        while(!feof(structEmplyees))
+        {
+            fgets(fileLine, 100, structEmplyees);
+            if (!feof(structEmplyees))
+            {
+                puts(fileLine);
+            }
+        }
+    } else
+    {
+        printf("\nerror opening file.\n");
+    }
+    fclose(structEmplyees);
+    return 0;
+}
