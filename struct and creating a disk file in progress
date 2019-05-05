@@ -1,0 +1,56 @@
+struct emplyees               //this struct emplyees in another tab
+{
+    char firstname[25];
+    char lastname[15];
+    int age;
+};
+
+
+#include <stdio.h>
+#include <conio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+#include "backgroundProgram.c"          //incles the top file for whole program to work
+
+FILE * structEmplyees;
+
+int main()
+{
+    int i, numEmplyees;
+
+    printf("how many emplyees do you have at your work?: ");
+    scanf(" %d", &numEmplyees);
+
+    struct emplyees * emplyeeInfo[numEmplyees];
+
+    getchar();
+    for (i = 0; i < numEmplyees; ++i) {
+        printf("what is your first name: ");
+        gets(emplyeeInfo[i]->firstname );
+
+        printf("what is your last name");
+        gets(emplyeeInfo[i]->lastname);
+
+        printf("what is your age?");
+        scanf(" %d", &emplyeeInfo[i]->age);
+
+        getchar();
+    }
+
+    structEmplyees = fopen("C:\\Users\\philip\\Desktop\\Cprograms\\emplyeeList.txt", "w");
+
+    if (structEmplyees == 0)
+    {
+        printf("file can't open try another time");
+        exit(1);
+    }
+
+    fprintf(structEmplyees, "Here are the emplyees that are in your company: \n");
+    for (i = 0; i < numEmplyees; ++i) {
+        fprintf(structEmplyees, "\n#%d: %s %s is %d years old", (i+1), emplyeeInfo[i]->firstname ,emplyeeInfo[i]->lastname, emplyeeInfo[i]->age);
+    }
+    fclose(structEmplyees);
+}
