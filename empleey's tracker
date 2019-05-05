@@ -18,7 +18,6 @@ struct emplyees               //this program is in another window and in my prog
 int main()
 {
     int i, numEmplyees, found = 0;
-    int userID[3] = {313, 87, 134};
 
     printf("how many emplyees do you have?");
     scanf(" %d", &numEmplyees);
