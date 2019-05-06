@@ -1,0 +1,33 @@
+struct emplyees
+{
+    char firstname[25];
+    char lastname[15];
+    int age;
+};
+
+
+FILE * EmplyeeList;
+
+int main()
+{
+    char fileLine[100];
+    EmplyeeList = fopen("C:\\Users\\philip\\Desktop\\Cprograms\\structList.txt", "r");
+
+    if(EmplyeeList != 0)
+    {
+        while(!feof(EmplyeeList))
+        {
+            fgets(fileLine, 100, EmplyeeList);
+            if (!feof(EmplyeeList))
+            {
+                puts(fileLine);
+            }
+        }
+    }
+    else
+    {
+        printf("error");
+    }
+    fclose(EmplyeeList);
+    return 0;
+}
