@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <conio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+#include "backgroundProgram.c"
+
+FILE * nums;
+
+int main() {
+   time_t t;
+   srand(time(&t));
+   char ans;
+
+   nums=fopen("C:\\Users\\philip\\Desktop\\Cprograms\\words.txt", "w+");
+
+   if (nums == 0)
+   {
+       printf("error");
+       exit(1);
+   }
+
+    fseek(nums, 0, SEEK_CUR);
+   fprintf(nums, "I dont know were this will be or even gone");
+
+   fseek(nums, 50, SEEK_SET);                                //begingin
+   fprintf(nums, "\nThis text will be in the begining");
+
+    fseek(nums, 0, SEEK_CUR);                                               //middle
+    fprintf(nums, "\nthis text will be after the other text\n");
+
+    fseek(nums, 0, SEEK_CUR);                                               //middle
+    fprintf(nums, "\n\n");
+
+    fseek(nums, 0, SEEK_END);
+    fprintf(nums,"\nthis text will be in the lasst line");          //end
+
+
+    printf("where do you want print \"hello world\"? ([b]ginging, [m]iddle or [e]nd: ");
+    scanf(" %c", &ans);
+
+    if (ans == 'b' || ans == 'B') {
+        fseek(nums, 40, SEEK_SET);
+        fprintf(nums, "\nELLO WOLD");
+    }
+    else if (ans == 'm' || ans == 'M') {
+        fseek(nums, -50, SEEK_CUR);
+        fprintf(nums, "\nHELLO WORLD");
+    }
+    else if(ans == 'e' || ans == 'E'){
+        fseek(nums, 0, SEEK_END);
+        fprintf(nums, "\nHELLO WORLD");
+    }
+    fclose(nums);
+    return 0;
+}
