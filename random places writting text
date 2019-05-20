@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <conio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+#include "backgroundProgram.c"
+
+FILE * words;
+
+int main(){
+    words = fopen("C:\\Users\\philip\\Desktop\\Cprograms\\words.txt", "w+");
+
+    if (!words)
+    {
+        printf("error");
+        exit(1);
+    }
+
+    //fseek(words, 0, SEEK_SET);
+    fprintf(words, "Hello world");
+
+    fseek(words, 13, SEEK_SET);
+    fprintf(words, "Boo I scared you");
+
+    //fprintf(words, "middle of the text");
+
+    fseek(words, 1, SEEK_CUR);
+    fprintf(words, "isded");
+
+    fprintf(words, "End of File");
+
+    fseek(words, 2, SEEK_END);
+    fprintf(words, "good bye good world");
+
+    fclose(words);
+    return 0;
+}
