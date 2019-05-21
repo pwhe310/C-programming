@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <conio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+//#include "backgroundProgram.c"
+
+char change(char name[15]);
+
+int main(){
+    char name[15] = "Philip eskes";
+    printf("Your current name is %s\n", name);
+    change(name);
+    return 0;
+}
+
+char change(char name[15]){
+    printf("\nwhat is your new name?");
+    gets(name);
+
+    printf("\nYour neew name is %s", name);
+    return 0;
+}
