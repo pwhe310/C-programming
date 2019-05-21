@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <conio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+//#include "backgroundProgram.c"
+
+int assiagnID(int randNum);
+char emplyeeInfo(int age, char firstName[10], char lastName[10], char location[10]);
+
+int main()
+{
+    int randNum, age;
+    char firstName[10], lastName[10], location[10];
+    time_t t;
+    srand(time(&t));
+
+    assiagnID(randNum);
+    emplyeeInfo(age, firstName, lastName, location);
+
+    printf("Your full name is %s %s. Your house is on the street of %s.", firstName, lastName, location);
+    return 0;
+}
+
+int assiagnID(int randNum){
+    randNum = (rand() %499) + 1;
+    printf("your Emplyee number is %d.\n", randNum);
+    return 0;
+}
+
+char emplyeeInfo(int age, char firstName[10], char lastName[10], char location[10]){
+    printf("what is your first name?");
+    gets(firstName);
+
+    printf("what is your last name?");
+    gets(lastName);
+
+    printf("\nwhere is your house location?");
+    gets(location);
+
+    printf("what is your age?");
+    scanf(" %d", &age);
+
+    printf("Your age is %d and ", age);
+    return 0;
+}
