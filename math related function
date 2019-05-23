@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <conio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+
+int changeSome(float *newX, int iAry[5]);
+
+int main()
+{
+    int i = 10;
+    int ctr;
+    float x = 20.5;
+
+    int iAry[] = {10, 20, 30, 40, 50};
+
+    puts("here are main()'s vars before the function: ");
+    printf("i is %d\n", i);
+    printf("x is %.1f\n", x);
+    for (ctr = 0; ctr < 5; ++ctr) {
+        printf("iAry[%d] is %d\n", ctr, iAry[ctr]);
+    }
+
+    changeSome(&x, iAry);
+
+    puts("\n\nHere are the main()'s vars after function: ");
+    printf("i is %d\n", i);
+    printf("x is %.1f\n", x);
+    for (ctr = 0; ctr < 5; ++ctr) {
+        printf("iAry[%d] is %d\n", ctr, iAry[ctr]);
+    }
+
+    return 0;
+}
+
+int changeSome(float *newX, int iAry[5])
+{
+    int j;
+
+    *newX = 97.6;
+
+    for (j = 0; j < 5; ++j) {
+        iAry[j] = 100+ 100*j;
+    }
+    return 0;
+}
