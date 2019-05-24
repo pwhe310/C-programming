@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <conio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+
+char oneWOrd(char itsDone[11]);
+int itsDone;
+
+int main()
+{
+    oneWOrd(itsDone);
+}
+
+char oneWOrd(char itsDone[11])
+{
+    itsDone = "hello world";
+
+    printf("%s", itsDone);
+    return 0;
+}
