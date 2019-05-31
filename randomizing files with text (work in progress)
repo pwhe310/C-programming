@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <conio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+#include "backgroundProgram.c"
+
+FILE * fptr;
+
+int main()
+{
+    struct  backgroundProgram books[2];
+    int i;
+
+
+    for (i = 0; i < 2; ++i) {
+        printf("what is the title of the book?");
+        gets(books[i].title);
+
+        printf("who is the author of the book?");
+        gets(books[i].aouther);
+
+        printf("what is the price of the book");
+        scanf(" %f", &books[i].price);
+
+        getchar();
+    }
+
+    fptr = fopen("C:\\Users\\philip\\Desktop\\Cprograms\\movingWordsAround.txt", "r+");
+
+    for (i = 0; i < 3; ++i) {
+        fseek(fptr, -30, SEEK_SET);
+        fprintf(fptr,"HELLO WORLD");
+        fprintf(fptr, "Tile: %s.\tAuthor: %s.\tPrice: %.2f", books[i].title, books[i].aouther, books[i].price);
+    }
+
+    fclose(fptr);
+}
