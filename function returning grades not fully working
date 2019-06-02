@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <conio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+//#include "backgroundProgram.c"
+
+float avgGrade(float avg);
+
+int main()
+{
+    int i;
+    float grade[3], total;
+
+    for (i = 0; i < 3; ++i) {
+        printf("#%d: what was the test score?: ", (i + 1));
+        scanf(" %f", &grade[i]);
+        
+         total = grade[i];
+    }
+    avgGrade(&total);
+    
+    return 0;
+}
+
+float avgGrade(float avg)
+{
+    
+};
